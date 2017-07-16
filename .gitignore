@@ -32,3 +32,5 @@ target/
 #System ignore
 .DS_Store
 Thumbs.db
+
+error.log
