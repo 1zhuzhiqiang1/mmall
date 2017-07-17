@@ -66,4 +66,16 @@ public class UserController {
         return iUserService.register(user);
     }
 
+    /**
+     * 获取问题
+     *
+     * @param username
+     * @return
+     */
+    @RequestMapping(value = "get_user_question.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> selectQuestion(String username) {
+        return iUserService.selectQuestion(username);
+    }
+
 }

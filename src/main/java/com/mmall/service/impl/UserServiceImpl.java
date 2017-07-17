@@ -73,4 +73,15 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccess("校验成功");
     }
 
+    @Override
+    public ServerResponse<String> selectQuestion(String username) {
+        if (checkValid(username, Const.USERNAME).isSuccess()) {
+            return ServerResponse.createByError("用户不存在");
+        }
+        String question = userMapper.selectQuestionByUsername(username);
+        if(null == question){
+            return ServerResponse.createByError("");
+        }
+        return null;
+    }
 }
